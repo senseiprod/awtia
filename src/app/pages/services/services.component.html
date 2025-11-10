@@ -1,0 +1,200 @@
+<!-- Hero Section -->
+<section class="pt-32 pb-20 px-4">
+  <div class="container mx-auto">
+    <div class="max-w-3xl mx-auto text-center space-y-6">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold">
+        <span class="gradient-text">Nos Services</span> IA Vocale
+      </h1>
+      <p class="text-lg md:text-xl text-muted-foreground">
+        Des solutions complètes pour intégrer la voix Darija dans vos applications
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TTS Service -->
+<section class="py-20 px-4 bg-muted/30">
+  <div class="container mx-auto">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Content -->
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm font-medium text-primary">
+            <lucide-icon [img]="Mic" [size]="16"></lucide-icon>
+            <span>Text-to-Speech</span>
+          </div>
+          
+          <h2 class="text-3xl md:text-4xl font-bold">TTS Darija</h2>
+          <p class="text-lg text-muted-foreground">
+            Transformez n'importe quel texte en voix naturelle en Darija marocain. 
+            Notre technologie de synthèse vocale offre une qualité exceptionnelle avec des voix authentiques.
+          </p>
+
+          <!-- Features -->
+          <ul class="space-y-3">
+            <li *ngFor="let feature of ttsFeatures" class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <lucide-icon [img]="Check" [size]="14" class="text-primary"></lucide-icon>
+              </div>
+              <span>{{ feature }}</span>
+            </li>
+          </ul>
+
+          <a href="https://castingvoixoff.ma" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors">
+            Découvrir TTS Darija
+            <lucide-icon [img]="ArrowRight" [size]="20"></lucide-icon>
+          </a>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="space-y-4">
+          <div *ngFor="let useCase of ttsUseCases"
+               class="bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-md transition-all">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <lucide-icon [img]="useCase.icon" [size]="24" class="text-primary"></lucide-icon>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">{{ useCase.title }}</h3>
+            <p class="text-sm text-muted-foreground">{{ useCase.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chatbot Service -->
+<section class="py-20 px-4">
+  <div class="container mx-auto">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Use Cases -->
+        <div class="space-y-4 order-2 lg:order-1">
+          <div *ngFor="let useCase of chatbotUseCases"
+               class="bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-md transition-all">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <lucide-icon [img]="useCase.icon" [size]="24" class="text-primary"></lucide-icon>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">{{ useCase.title }}</h3>
+            <p class="text-sm text-muted-foreground">{{ useCase.description }}</p>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="space-y-6 order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm font-medium text-primary">
+            <lucide-icon [img]="Bot" [size]="16"></lucide-icon>
+            <span>Intelligence Artificielle</span>
+          </div>
+          
+          <h2 class="text-3xl md:text-4xl font-bold">Chatbot Vocal IA</h2>
+          <p class="text-lg text-muted-foreground">
+            Un assistant vocal intelligent qui comprend et parle le Darija. 
+            Automatisez vos interactions clients avec une IA conversationnelle avancée.
+          </p>
+
+          <!-- Features -->
+          <ul class="space-y-3">
+            <li *ngFor="let feature of chatbotFeatures" class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <lucide-icon [img]="Check" [size]="14" class="text-primary"></lucide-icon>
+              </div>
+              <span>{{ feature }}</span>
+            </li>
+          </ul>
+
+          <a routerLink="/demo"
+             class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors">
+            Demander un chatbot
+            <lucide-icon [img]="ArrowRight" [size]="20"></lucide-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison Table -->
+<section class="py-20 px-4 bg-muted/30">
+  <div class="container mx-auto">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center space-y-4 mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold">Comparaison des Services</h2>
+        <p class="text-lg text-muted-foreground">
+          Choisissez la solution adaptée à vos besoins
+        </p>
+      </div>
+
+      <div class="bg-card border border-border rounded-2xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="border-b border-border">
+                <th class="text-left p-6 font-semibold">Fonctionnalité</th>
+                <th class="text-center p-6 font-semibold">
+                  <div class="flex items-center justify-center gap-2">
+                    <lucide-icon [img]="Mic" [size]="20" class="text-primary"></lucide-icon>
+                    <span>TTS Darija</span>
+                  </div>
+                </th>
+                <th class="text-center p-6 font-semibold">
+                  <div class="flex items-center justify-center gap-2">
+                    <lucide-icon [img]="Bot" [size]="20" class="text-primary"></lucide-icon>
+                    <span>Chatbot IA</span>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of comparisonFeatures; let last = last" 
+                  [class.border-b]="!last" 
+                  class="border-border hover:bg-muted/50 transition-colors">
+                <td class="p-6">{{ item.feature }}</td>
+                <td class="p-6 text-center">
+                  <div class="flex justify-center">
+                    <div *ngIf="item.tts" class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                      <lucide-icon [img]="Check" [size]="16" class="text-primary"></lucide-icon>
+                    </div>
+                    <span *ngIf="!item.tts" class="text-muted-foreground">-</span>
+                  </div>
+                </td>
+                <td class="p-6 text-center">
+                  <div class="flex justify-center">
+                    <div *ngIf="item.chatbot" class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                      <lucide-icon [img]="Check" [size]="16" class="text-primary"></lucide-icon>
+                    </div>
+                    <span *ngIf="!item.chatbot" class="text-muted-foreground">-</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 px-4">
+  <div class="container mx-auto">
+    <div class="max-w-4xl mx-auto bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-primary/20 rounded-2xl p-12 text-center space-y-6">
+      <h2 class="text-3xl md:text-4xl font-bold">Besoin d'aide pour choisir ?</h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Notre équipe est là pour vous conseiller et vous aider à trouver la solution parfaite pour votre projet
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a routerLink="/demo"
+           class="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors">
+          Demander une démo
+        </a>
+        <a href="mailto:contact@sawtai.ma"
+           class="px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/80 transition-colors">
+          Contacter un expert
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

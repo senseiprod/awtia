@@ -1,0 +1,150 @@
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 px-4 overflow-hidden">
+  <!-- Background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-transparent pointer-events-none"></div>
+  
+  <div class="container mx-auto relative z-10">
+    <div class="max-w-4xl mx-auto text-center space-y-8">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm font-medium text-primary">
+        <lucide-icon [img]="Zap" [size]="16"></lucide-icon>
+        <span>Première plateforme IA vocale en Darija</span>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+        <span class="text-balance">Donnez une voix </span>
+        <span class="gradient-text text-balance">en Darija</span>
+        <span class="text-balance"> à votre entreprise</span>
+      </h1>
+
+      <!-- Description -->
+      <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+        Solutions d'intelligence artificielle vocale spécialisées en Darija marocain. 
+        Transformez votre communication avec des voix naturelles et des chatbots intelligents.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a routerLink="/services"
+           class="group px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all flex items-center gap-2">
+          Découvrir nos services
+          <lucide-icon [img]="ArrowRight" [size]="20" class="group-hover:translate-x-1 transition-transform"></lucide-icon>
+        </a>
+        <a routerLink="/demo"
+           class="px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/80 transition-colors">
+          Demander une démo
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
+        <div *ngFor="let stat of stats" class="space-y-1">
+          <div class="text-2xl md:text-3xl font-bold gradient-text">{{ stat.value }}</div>
+          <div class="text-sm text-muted-foreground">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-20 px-4">
+  <div class="container mx-auto">
+    <div class="text-center space-y-4 mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold">Nos Solutions IA</h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Des technologies de pointe adaptées au marché marocain
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div *ngFor="let service of services" 
+           class="group relative bg-card border border-border rounded-2xl p-8 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+        <!-- Icon -->
+        <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+          <lucide-icon [img]="service.icon" [size]="28" class="text-primary"></lucide-icon>
+        </div>
+
+        <!-- Content -->
+        <h3 class="text-2xl font-bold mb-3">{{ service.title }}</h3>
+        <p class="text-muted-foreground mb-6">{{ service.description }}</p>
+
+        <!-- Features -->
+        <ul class="space-y-3 mb-8">
+          <li *ngFor="let feature of service.features" class="flex items-start gap-2 text-sm">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></div>
+            <span>{{ feature }}</span>
+          </li>
+        </ul>
+
+        <!-- CTA -->
+        <a *ngIf="service.isExternal" 
+           [href]="service.link" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all">
+          Découvrir le service
+          <lucide-icon [img]="ArrowRight" [size]="20"></lucide-icon>
+        </a>
+        <button *ngIf="service.action === 'request'"
+                (click)="openChatbotModal()"
+                class="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all">
+          Demander un chatbot
+          <lucide-icon [img]="ArrowRight" [size]="20"></lucide-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-20 px-4 bg-muted/30">
+  <div class="container mx-auto">
+    <div class="text-center space-y-4 mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold">Pourquoi choisir Sawtai ?</h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Une technologie de pointe au service de vos besoins
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div *ngFor="let feature of features"
+           class="bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-md transition-all">
+        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+          <lucide-icon [img]="feature.icon" [size]="24" class="text-primary"></lucide-icon>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">{{ feature.title }}</h3>
+        <p class="text-sm text-muted-foreground">{{ feature.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 px-4">
+  <div class="container mx-auto">
+    <div class="max-w-4xl mx-auto bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-primary/20 rounded-2xl p-12 text-center space-y-6">
+      <h2 class="text-3xl md:text-4xl font-bold">Prêt à transformer votre communication ?</h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Rejoignez les entreprises qui font confiance à Sawtai pour leurs solutions vocales en Darija
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a routerLink="/demo"
+           class="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors">
+          Demander une démo gratuite
+        </a>
+        <a href="mailto:contact@sawtai.ma"
+           class="px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/80 transition-colors">
+          Nous contacter
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chatbot Modal Component -->
+<app-chatbot-modal 
+  [isOpen]="showChatbotModal()" 
+  (close)="closeChatbotModal()">
+</app-chatbot-modal>

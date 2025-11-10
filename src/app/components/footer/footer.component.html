@@ -1,0 +1,111 @@
+<footer class="bg-muted/30 border-t border-border mt-20">
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Brand -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+            <span class="text-white font-bold text-lg">S</span>
+          </div>
+          <span class="text-xl font-bold gradient-text">Sawtai</span>
+        </div>
+        <p class="text-sm text-muted-foreground">
+          Solutions d'IA vocale en Darija pour les entreprises marocaines
+        </p>
+        <div class="flex items-center gap-3">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+             class="p-2 text-muted-foreground hover:text-primary hover:bg-accent rounded-lg transition-colors">
+            <lucide-icon [img]="Linkedin" [size]="20"></lucide-icon>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+             class="p-2 text-muted-foreground hover:text-primary hover:bg-accent rounded-lg transition-colors">
+            <lucide-icon [img]="Twitter" [size]="20"></lucide-icon>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+             class="p-2 text-muted-foreground hover:text-primary hover:bg-accent rounded-lg transition-colors">
+            <lucide-icon [img]="Facebook" [size]="20"></lucide-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="space-y-4">
+        <h3 class="font-semibold text-foreground">Services</h3>
+        <ul class="space-y-2">
+          <li>
+            <a routerLink="/services" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+              TTS Darija
+            </a>
+          </li>
+          <li>
+            <a routerLink="/services" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Chatbot Vocal IA
+            </a>
+          </li>
+          <li>
+            <a href="https://castingvoixoff.ma" target="_blank" rel="noopener noreferrer"
+               class="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Voice-Over Pro
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Entreprise -->
+      <div class="space-y-4">
+        <h3 class="font-semibold text-foreground">Entreprise</h3>
+        <ul class="space-y-2">
+          <li>
+            <a routerLink="/" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+              À propos
+            </a>
+          </li>
+          <li>
+            <a routerLink="/demo" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Demander une démo
+            </a>
+          </li>
+          <li>
+            <a href="mailto:contact@sawtai.ma" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="space-y-4">
+        <h3 class="font-semibold text-foreground">Newsletter</h3>
+        <p class="text-sm text-muted-foreground">
+          Restez informé de nos dernières innovations
+        </p>
+        <form class="flex gap-2">
+          <input 
+            type="email" 
+            placeholder="votre@email.com"
+            class="flex-1 px-3 py-2 text-sm bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring">
+          <button 
+            type="submit"
+            class="px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
+            <lucide-icon [img]="Mail" [size]="16"></lucide-icon>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-muted-foreground">
+        © {{ currentYear }} Sawtai. Tous droits réservés.
+      </p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+          Politique de confidentialité
+        </a>
+        <a href="#" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+          Conditions d'utilisation
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
