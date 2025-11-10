@@ -14,7 +14,10 @@
     <!-- Success Message -->
     <div *ngIf="isSuccess()" 
          class="mb-8 p-6 bg-green-500/10 border border-green-500/20 rounded-xl flex items-start gap-4">
-      <lucide-icon [img]="CheckCircle2" [size]="24" class="text-green-500 flex-shrink-0"></lucide-icon>
+      <!-- Replaced lucide-icon with inline SVG -->
+      <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
       <div>
         <h3 class="font-semibold text-green-500 mb-1">Demande envoyée avec succès !</h3>
         <p class="text-sm text-muted-foreground">
@@ -240,7 +243,10 @@
           type="submit"
           [disabled]="isSubmitting()"
           class="w-full sm:w-auto px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
-          <lucide-icon *ngIf="isSubmitting()" [img]="Loader2" [size]="20" class="animate-spin"></lucide-icon>
+          <!-- Replaced lucide-icon with inline SVG for Loader2 icon (spinning loader) -->
+          <svg *ngIf="isSubmitting()" class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
           <span>{{ isSubmitting() ? 'Envoi en cours...' : 'Envoyer la demande' }}</span>
         </button>
         <p class="text-sm text-muted-foreground">

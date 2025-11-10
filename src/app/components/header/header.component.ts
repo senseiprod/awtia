@@ -1,14 +1,13 @@
 import { Component, HostListener, signal } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { RouterLink, RouterLinkActive } from "@angular/router"
-import { Menu, X } from "lucide-angular"
 
 @Component({
   selector: "app-header",
-  standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive, Menu, X],
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.css"],
+  standalone: true,
+  imports: [CommonModule, RouterLink, RouterLinkActive]
 })
 export class HeaderComponent {
   isScrolled = signal(false)

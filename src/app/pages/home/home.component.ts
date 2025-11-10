@@ -1,34 +1,25 @@
-import { Component, signal } from "@angular/core"
 import { CommonModule } from "@angular/common"
-import { RouterLink } from "@angular/router"
-import { Mic, Bot, Zap, Shield, Globe, TrendingUp, ArrowRight, MessageSquare } from "lucide-angular"
-import { ChatbotModalComponent } from "../../components/chatbot-modal/chatbot-modal.component"
+import { Component, signal } from "@angular/core"
+import { ChatbotModalComponent } from "src/app/components/chatbot-modal/chatbot-modal.component"
 
 @Component({
   selector: "app-home",
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterLink,
-    Mic,
-    Bot,
-    Zap,
-    Shield,
-    Globe,
-    TrendingUp,
-    ArrowRight,
-    MessageSquare,
-    ChatbotModalComponent,
-  ],
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"],
+  standalone: true,
+  imports: [CommonModule, ChatbotModalComponent]
 })
 export class HomeComponent {
   showChatbotModal = signal(false)
 
+  particles = Array.from({ length: 20 }, (_, i) => ({
+    x: Math.random() * 100,
+    delay: Math.random() * 5,
+  }))
+
   services = [
     {
-      icon: Mic,
+      icon: "mic",
       title: "TTS Darija",
       description: "Transformez vos textes en voix naturelle en Darija marocain",
       features: [
@@ -41,7 +32,7 @@ export class HomeComponent {
       isExternal: true,
     },
     {
-      icon: Bot,
+      icon: "bot",
       title: "Chatbot Vocal IA",
       description: "Assistant vocal intelligent qui comprend et parle le Darija",
       features: ["Compréhension contextuelle", "Réponses en temps réel", "Intégration facile", "Support 24/7"],
@@ -51,32 +42,32 @@ export class HomeComponent {
 
   features = [
     {
-      icon: Zap,
+      icon: "zap",
       title: "Performance Optimale",
       description: "Traitement ultra-rapide avec une latence minimale pour une expérience fluide",
     },
     {
-      icon: Shield,
+      icon: "shield",
       title: "Sécurité Garantie",
       description: "Vos données sont protégées avec un chiffrement de bout en bout",
     },
     {
-      icon: Globe,
+      icon: "globe",
       title: "Darija Authentique",
       description: "Compréhension parfaite des nuances et expressions marocaines",
     },
     {
-      icon: TrendingUp,
+      icon: "trending-up",
       title: "Évolution Continue",
       description: "Amélioration constante grâce à l'apprentissage automatique",
     },
     {
-      icon: MessageSquare,
+      icon: "message-square",
       title: "Support Dédié",
       description: "Équipe d'experts disponible pour vous accompagner",
     },
     {
-      icon: Bot,
+      icon: "bot",
       title: "Intégration Simple",
       description: "API REST facile à intégrer dans vos applications existantes",
     },

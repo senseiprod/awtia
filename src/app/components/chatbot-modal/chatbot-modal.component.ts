@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output, signal } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { FormsModule } from "@angular/forms"
-import { X, CheckCircle2, Loader2 } from "lucide-angular"
 
 interface ChatbotForm {
   firstName: string
@@ -19,10 +18,10 @@ interface ChatbotForm {
 
 @Component({
   selector: "app-chatbot-modal",
-  standalone: true,
-  imports: [CommonModule, FormsModule, X, CheckCircle2, Loader2],
   templateUrl: "./chatbot-modal.component.html",
   styleUrls: ["./chatbot-modal.component.css"],
+  standalone: true,
+  imports: [CommonModule, FormsModule]
 })
 export class ChatbotModalComponent {
   @Input() isOpen = false

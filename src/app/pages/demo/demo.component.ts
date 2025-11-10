@@ -2,7 +2,6 @@ import { Component, signal } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { FormsModule } from "@angular/forms"
 import { RouterLink } from "@angular/router"
-import { CheckCircle2, Loader2 } from "lucide-angular"
 
 interface DemoForm {
   firstName: string
@@ -22,10 +21,10 @@ interface DemoForm {
 
 @Component({
   selector: "app-demo",
-  standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, CheckCircle2, Loader2],
   templateUrl: "./demo.component.html",
   styleUrls: ["./demo.component.css"],
+  standalone: true,
+  imports: [CommonModule, FormsModule, RouterLink]
 })
 export class DemoComponent {
   isSubmitting = signal(false)

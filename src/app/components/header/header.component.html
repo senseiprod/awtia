@@ -5,7 +5,7 @@
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <a routerLink="/" class="flex items-center gap-2 group">
-        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
           <span class="text-white font-bold text-lg">S</span>
         </div>
         <span class="text-xl font-bold gradient-text">Sawtai</span>
@@ -40,10 +40,19 @@
       </div>
 
       <!-- Mobile Menu Button -->
+      <!-- Replaced lucide icon with inline SVG -->
       <button 
         (click)="toggleMobileMenu()"
         class="md:hidden p-2 text-foreground hover:bg-accent rounded-lg transition-colors">
-        <lucide-icon [img]="isMobileMenuOpen() ? X : Menu" [size]="24"></lucide-icon>
+        <svg *ngIf="!isMobileMenuOpen()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg *ngIf="isMobileMenuOpen()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
       </button>
     </div>
 
