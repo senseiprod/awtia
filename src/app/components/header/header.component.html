@@ -1,14 +1,25 @@
 <header 
   [class]="'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ' + 
-           (isScrolled() ? 'bg-background/80 backdrop-blur-lg border-b border-border' : 'bg-transparent')">
+           (isScrolled() ? 'bg-black/60 backdrop-blur-xl border-b border-white/10' : 'bg-transparent')">
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
-      <a routerLink="/" class="flex items-center gap-2 group">
-        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-          <span class="text-white font-bold text-lg">S</span>
-        </div>
-        <span class="text-xl font-bold gradient-text">Sawtai</span>
+      <a routerLink="/" class="flex items-center gap-2 group relative">
+        <!-- White logo for non-scrolled state (transparent header) -->
+        <img 
+          *ngIf="!isScrolled()" 
+          src="assets/sawt ia logo blanc.png" 
+          alt="Sawtai Logo"
+          class="h-12 w-auto transition-opacity duration-300"
+          style="width: 100px;">
+        
+        <!-- Colored/Dark logo for scrolled state (with background) -->
+        <img 
+          *ngIf="isScrolled()" 
+          src="assets/sawt ia logo blanc.png" 
+          alt="Sawtai Logo"
+          class="h-12 w-auto transition-opacity duration-300"
+          style="width: 100px;">
       </a>
 
       <!-- Desktop Navigation -->
@@ -21,10 +32,15 @@
            class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
           Services
         </a>
+        <a routerLink="/pricing" routerLinkActive="text-primary"
+           class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          Pricing
+        </a>
         <a href="https://castingvoixoff.ma" target="_blank" rel="noopener noreferrer"
            class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
           Voice-Over
         </a>
+
       </nav>
 
       <!-- Desktop CTA -->
@@ -60,7 +76,7 @@
     <div 
       [class]="'md:hidden overflow-hidden transition-all duration-300 ' + 
                (isMobileMenuOpen() ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0')">
-      <nav class="flex flex-col gap-4 py-4 border-t border-border">
+      <nav class="flex flex-col gap-4 py-4 border-t border-white/10">
         <a routerLink="/" (click)="closeMobileMenu()"
            routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact: true}"
            class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">

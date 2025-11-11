@@ -1,0 +1,315 @@
+<!-- Dark Background -->
+<div class="fixed inset-0 -z-10 bg-black overflow-hidden">
+  <!-- Black Overlay -->
+  <div class="absolute inset-0 bg-black"></div>
+  
+  <!-- Floating Particles -->
+  <div class="particles-container">
+    <div *ngFor="let particle of particles" 
+         class="particle"
+         [style.left.%]="particle.x"
+         [style.animation-delay.s]="particle.delay"></div>
+  </div>
+  
+  <!-- Grid Overlay -->
+  <div class="grid-overlay"></div>
+</div>
+
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 px-4">
+  <div class="container mx-auto relative z-10">
+    <div class="max-w-3xl mx-auto text-center space-y-6 animate-fade-in-up">
+      <div class="inline-flex items-center gap-2 px-4 py-2 glass-effect border border-primary/30 rounded-full text-sm font-medium mb-4">
+        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span class="text-white">Tarification Simple</span>
+      </div>
+      
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+        Choisissez votre <span class="text-primary">plan</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 leading-relaxed">
+        Des solutions adaptées à tous les besoins, du starter à l'entreprise
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Plans -->
+<section class="relative py-20 px-4">
+  <div class="container mx-auto">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Starter Plan -->
+        <div class="glass-card hover:scale-105 transition-all duration-300 group">
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-2xl font-bold text-white mb-2">Starter</h3>
+              <p class="text-gray-400">Pour les petits projets</p>
+            </div>
+            
+            <div class="flex items-baseline gap-2">
+              <span class="text-5xl font-bold text-white">99€</span>
+              <span class="text-gray-400">/mois</span>
+            </div>
+            
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">10,000 requêtes/mois</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">API TTS Darija</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">2 voix disponibles</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">Support email</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">Documentation complète</span>
+              </li>
+            </ul>
+            
+            <a routerLink="/demo" 
+               class="block w-full text-center px-6 py-3 border border-primary/30 text-white rounded-lg font-medium hover:bg-primary/10 hover:border-primary transition-all duration-300">
+              Commencer
+            </a>
+          </div>
+        </div>
+
+        <!-- Professional Plan (Featured) -->
+        <div class="glass-card hover:scale-105 transition-all duration-300 group relative border-primary/40">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-primary to-accent text-white text-sm font-medium rounded-full">
+            Populaire
+          </div>
+          
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-2xl font-bold text-white mb-2">Professional</h3>
+              <p class="text-gray-400">Pour les entreprises</p>
+            </div>
+            
+            <div class="flex items-baseline gap-2">
+              <span class="text-5xl font-bold text-white">299€</span>
+              <span class="text-gray-400">/mois</span>
+            </div>
+            
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">50,000 requêtes/mois</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">API TTS + Chatbot</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">Toutes les voix disponibles</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">Support prioritaire</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">Dashboard analytics</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">Personnalisation chatbot</span>
+              </li>
+            </ul>
+            
+            <a routerLink="/demo" 
+               class="block w-full text-center px-6 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-lg font-medium hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
+              Commencer
+            </a>
+          </div>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="glass-card hover:scale-105 transition-all duration-300 group">
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-2xl font-bold text-white mb-2">Enterprise</h3>
+              <p class="text-gray-400">Solution sur mesure</p>
+            </div>
+            
+            <div class="flex items-baseline gap-2">
+              <span class="text-5xl font-bold text-white">Sur devis</span>
+            </div>
+            
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">Volume illimité</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">Solutions personnalisées</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">Voix personnalisées</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">Support dédié 24/7</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">SLA garanti</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary/20">
+                  <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-gray-300">Infrastructure dédiée</span>
+              </li>
+            </ul>
+            
+            <a href="mailto:contact@sawtai.ma" 
+               class="block w-full text-center px-6 py-3 border border-primary/30 text-white rounded-lg font-medium hover:bg-primary/10 hover:border-primary transition-all duration-300">
+              Nous contacter
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="relative py-20 px-4">
+  <div class="container mx-auto">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Questions Fréquentes</h2>
+        <p class="text-gray-400">Trouvez les réponses à vos questions</p>
+      </div>
+      
+      <div class="space-y-4">
+        <div class="glass-card">
+          <h3 class="text-xl font-semibold text-white mb-2">Puis-je changer de plan à tout moment ?</h3>
+          <p class="text-gray-400">Oui, vous pouvez upgrader ou downgrader votre plan à tout moment depuis votre dashboard.</p>
+        </div>
+        
+        <div class="glass-card">
+          <h3 class="text-xl font-semibold text-white mb-2">Comment fonctionne la facturation ?</h3>
+          <p class="text-gray-400">La facturation est mensuelle et débute dès l'activation de votre plan. Paiement sécurisé par carte bancaire.</p>
+        </div>
+        
+        <div class="glass-card">
+          <h3 class="text-xl font-semibold text-white mb-2">Y a-t-il une période d'essai ?</h3>
+          <p class="text-gray-400">Oui, nous offrons 14 jours d'essai gratuit pour tous les plans, sans engagement.</p>
+        </div>
+        
+        <div class="glass-card">
+          <h3 class="text-xl font-semibold text-white mb-2">Que se passe-t-il si je dépasse mon quota ?</h3>
+          <p class="text-gray-400">Vous serez notifié par email. Vous pourrez upgrader votre plan ou acheter des crédits supplémentaires.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="relative py-20 px-4">
+  <div class="container mx-auto">
+    <div class="max-w-4xl mx-auto glass-card-glow text-center space-y-6">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10 rounded-2xl blur-xl"></div>
+      <div class="relative z-10 p-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Besoin d'aide pour choisir ?</h2>
+        <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+          Notre équipe commerciale est là pour vous conseiller et trouver le plan adapté à vos besoins
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a routerLink="/demo"
+             class="px-8 py-4 bg-gradient-to-r from-primary to-accent text-white rounded-lg font-medium hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
+            Demander une démo
+          </a>
+          <a href="mailto:contact@sawtai.ma"
+             class="px-8 py-4 glass-effect border border-white/10 text-white rounded-lg font-medium hover:border-primary/50 transition-all duration-300">
+            Contacter l'équipe
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

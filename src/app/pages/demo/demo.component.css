@@ -1,3 +1,29 @@
+/* Added custom styles for dark theme consistency */
 :host {
   display: block;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #0f5151 0%, #a0c85a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 81, 81, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 81, 81, 0.7);
 }

@@ -4,22 +4,28 @@ import { DemoComponent } from './pages/demo/demo.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { HomeAltComponent } from './pages/home-alt/home-alt.component';
+import { PricingComponent } from './pages/pricing/pricing.component';
 
-export const routes: Routes = [{
+export const routes: Routes = [  
+  {
     path: "",
+    component: HomeAltComponent,
+  },
+  {
+    path: "home-original",
     component: HomeComponent,
   },
   {
     path: "services",
     component: ServicesComponent,
   },
-    {
-    path: "alt",
-    component: HomeAltComponent,
-  },
   {
     path: "demo",
     component: DemoComponent,
+  },
+  {
+    path: "pricing",
+    component: PricingComponent,
   },
   {
     path: "**",

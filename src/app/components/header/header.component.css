@@ -1,3 +1,44 @@
+/* Added dark theme styling and glass morphism effects for header */
 :host {
   display: block;
+}
+
+/* Override text colors for dark theme */
+header a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+header a:hover {
+  color: #a0c85a;
+}
+
+header a.text-primary,
+header a[routerLinkActive="text-primary"] {
+  color: #a0c85a;
+}
+
+/* Button styling */
+header button {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+header button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Primary button */
+header a.bg-primary {
+  background: linear-gradient(135deg, #0f5151 0%, #a0c85a 100%);
+  color: white;
+}
+
+header a.bg-primary:hover {
+  background: linear-gradient(135deg, #0a3d3d 0%, #8bb34a 100%);
+}
+
+/* Mobile menu */
+header nav {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border-top-color: rgba(255, 255, 255, 0.1);
 }

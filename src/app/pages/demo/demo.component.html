@@ -1,11 +1,14 @@
-<div class="min-h-screen pt-32 pb-20 px-4">
-  <div class="container mx-auto max-w-4xl">
+<div class="relative min-h-screen pt-32 pb-20 px-4 bg-black text-white">
+  <!-- Background gradient -->
+  <div class="fixed inset-0 bg-gradient-to-br from-black via-[#0F5151]/10 to-black pointer-events-none"></div>
+  
+  <div class="container mx-auto max-w-4xl relative z-10">
     <!-- Header -->
     <div class="text-center space-y-4 mb-12">
       <h1 class="text-4xl md:text-5xl font-bold">
         Demander une <span class="gradient-text">Démo</span>
       </h1>
-      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+      <p class="text-lg text-gray-400 max-w-2xl mx-auto">
         Découvrez comment Sawtai peut transformer votre communication. 
         Remplissez ce formulaire et notre équipe vous contactera sous 24h.
       </p>
@@ -13,29 +16,28 @@
 
     <!-- Success Message -->
     <div *ngIf="isSuccess()" 
-         class="mb-8 p-6 bg-green-500/10 border border-green-500/20 rounded-xl flex items-start gap-4">
-      <!-- Replaced lucide-icon with inline SVG -->
-      <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+         class="mb-8 p-6 bg-[#A0C85A]/10 border border-[#A0C85A]/30 rounded-xl flex items-start gap-4 backdrop-blur-sm">
+      <svg class="w-6 h-6 text-[#A0C85A] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
       <div>
-        <h3 class="font-semibold text-green-500 mb-1">Demande envoyée avec succès !</h3>
-        <p class="text-sm text-muted-foreground">
+        <h3 class="font-semibold text-[#A0C85A] mb-1">Demande envoyée avec succès !</h3>
+        <p class="text-sm text-gray-400">
           Nous avons bien reçu votre demande. Notre équipe vous contactera dans les plus brefs délais.
         </p>
       </div>
     </div>
 
     <!-- Form -->
-    <form (ngSubmit)="onSubmit()" class="bg-card border border-border rounded-2xl p-8 space-y-8">
+    <form (ngSubmit)="onSubmit()" class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 space-y-8 shadow-2xl">
       <!-- Personal Information -->
       <div class="space-y-6">
-        <h2 class="text-2xl font-bold">Informations personnelles</h2>
+        <h2 class="text-2xl font-bold text-white">Informations personnelles</h2>
         
         <div class="grid md:grid-cols-2 gap-6">
           <div class="space-y-2">
-            <label for="firstName" class="block text-sm font-medium">
-              Prénom <span class="text-destructive">*</span>
+            <label for="firstName" class="block text-sm font-medium text-gray-300">
+              Prénom <span class="text-red-400">*</span>
             </label>
             <input
               type="text"
@@ -43,13 +45,13 @@
               name="firstName"
               [(ngModel)]="formData.firstName"
               required
-              class="w-full px-4 py-2 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0F5151] text-white placeholder-gray-500"
               placeholder="Votre prénom">
           </div>
 
           <div class="space-y-2">
-            <label for="lastName" class="block text-sm font-medium">
-              Nom <span class="text-destructive">*</span>
+            <label for="lastName" class="block text-sm font-medium text-gray-300">
+              Nom <span class="text-red-400">*</span>
             </label>
             <input
               type="text"
@@ -57,15 +59,15 @@
               name="lastName"
               [(ngModel)]="formData.lastName"
               required
-              class="w-full px-4 py-2 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0F5151] text-white placeholder-gray-500"
               placeholder="Votre nom">
           </div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
           <div class="space-y-2">
-            <label for="email" class="block text-sm font-medium">
-              Email professionnel <span class="text-destructive">*</span>
+            <label for="email" class="block text-sm font-medium text-gray-300">
+              Email professionnel <span class="text-red-400">*</span>
             </label>
             <input
               type="email"
@@ -73,13 +75,13 @@
               name="email"
               [(ngModel)]="formData.email"
               required
-              class="w-full px-4 py-2 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0F5151] text-white placeholder-gray-500"
               placeholder="vous@entreprise.ma">
           </div>
 
           <div class="space-y-2">
-            <label for="phone" class="block text-sm font-medium">
-              Téléphone <span class="text-destructive">*</span>
+            <label for="phone" class="block text-sm font-medium text-gray-300">
+              Téléphone <span class="text-red-400">*</span>
             </label>
             <input
               type="tel"
@@ -87,7 +89,7 @@
               name="phone"
               [(ngModel)]="formData.phone"
               required
-              class="w-full px-4 py-2 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0F5151] text-white placeholder-gray-500"
               placeholder="+212 6XX XXX XXX">
           </div>
         </div>
@@ -95,12 +97,12 @@
 
       <!-- Company Information -->
       <div class="space-y-6">
-        <h2 class="text-2xl font-bold">Informations sur l'entreprise</h2>
+        <h2 class="text-2xl font-bold text-white">Informations sur l'entreprise</h2>
         
         <div class="grid md:grid-cols-2 gap-6">
           <div class="space-y-2">
-            <label for="company" class="block text-sm font-medium">
-              Nom de l'entreprise <span class="text-destructive">*</span>
+            <label for="company" class="block text-sm font-medium text-gray-300">
+              Nom de l'entreprise <span class="text-red-400">*</span>
             </label>
             <input
               type="text"
@@ -108,13 +110,13 @@
               name="company"
               [(ngModel)]="formData.company"
               required
-              class="w-full px-4 py-2 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0F5151] text-white placeholder-gray-500"
               placeholder="Votre entreprise">
           </div>
 
           <div class="space-y-2">
-            <label for="position" class="block text-sm font-medium">
-              Poste <span class="text-destructive">*</span>
+            <label for="position" class="block text-sm font-medium text-gray-300">
+              Poste <span class="text-red-400">*</span>
             </label>
             <input
               type="text"
@@ -122,39 +124,39 @@
               name="position"
               [(ngModel)]="formData.position"
               required
-              class="w-full px-4 py-2 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0F5151] text-white placeholder-gray-500"
               placeholder="Votre fonction">
           </div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
           <div class="space-y-2">
-            <label for="industry" class="block text-sm font-medium">
-              Secteur d'activité <span class="text-destructive">*</span>
+            <label for="industry" class="block text-sm font-medium text-gray-300">
+              Secteur d'activité <span class="text-red-400">*</span>
             </label>
             <select
               id="industry"
               name="industry"
               [(ngModel)]="formData.industry"
               required
-              class="w-full px-4 py-2 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring">
-              <option value="">Sélectionnez un secteur</option>
-              <option *ngFor="let industry of industries" [value]="industry">{{ industry }}</option>
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0F5151] text-white">
+              <option value="" class="bg-black">Sélectionnez un secteur</option>
+              <option *ngFor="let industry of industries" [value]="industry" class="bg-black">{{ industry }}</option>
             </select>
           </div>
 
           <div class="space-y-2">
-            <label for="companySize" class="block text-sm font-medium">
-              Taille de l'entreprise <span class="text-destructive">*</span>
+            <label for="companySize" class="block text-sm font-medium text-gray-300">
+              Taille de l'entreprise <span class="text-red-400">*</span>
             </label>
             <select
               id="companySize"
               name="companySize"
               [(ngModel)]="formData.companySize"
               required
-              class="w-full px-4 py-2 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring">
-              <option value="">Sélectionnez une taille</option>
-              <option *ngFor="let size of companySizes" [value]="size">{{ size }}</option>
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0F5151] text-white">
+              <option value="" class="bg-black">Sélectionnez une taille</option>
+              <option *ngFor="let size of companySizes" [value]="size" class="bg-black">{{ size }}</option>
             </select>
           </div>
         </div>
@@ -162,26 +164,26 @@
 
       <!-- Project Details -->
       <div class="space-y-6">
-        <h2 class="text-2xl font-bold">Détails du projet</h2>
+        <h2 class="text-2xl font-bold text-white">Détails du projet</h2>
         
         <div class="space-y-2">
-          <label for="service" class="block text-sm font-medium">
-            Service souhaité <span class="text-destructive">*</span>
+          <label for="service" class="block text-sm font-medium text-gray-300">
+            Service souhaité <span class="text-red-400">*</span>
           </label>
           <select
             id="service"
             name="service"
             [(ngModel)]="formData.service"
             required
-            class="w-full px-4 py-2 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring">
-            <option value="">Sélectionnez un service</option>
-            <option *ngFor="let service of services" [value]="service">{{ service }}</option>
+            class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0F5151] text-white">
+            <option value="" class="bg-black">Sélectionnez un service</option>
+            <option *ngFor="let service of services" [value]="service" class="bg-black">{{ service }}</option>
           </select>
         </div>
 
         <div class="space-y-2">
-          <label for="useCase" class="block text-sm font-medium">
-            Cas d'usage <span class="text-destructive">*</span>
+          <label for="useCase" class="block text-sm font-medium text-gray-300">
+            Cas d'usage <span class="text-red-400">*</span>
           </label>
           <input
             type="text"
@@ -189,42 +191,42 @@
             name="useCase"
             [(ngModel)]="formData.useCase"
             required
-            class="w-full px-4 py-2 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+            class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0F5151] text-white placeholder-gray-500"
             placeholder="Ex: Service client automatisé, contenu audio...">
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
           <div class="space-y-2">
-            <label for="budget" class="block text-sm font-medium">
+            <label for="budget" class="block text-sm font-medium text-gray-300">
               Budget estimé
             </label>
             <select
               id="budget"
               name="budget"
               [(ngModel)]="formData.budget"
-              class="w-full px-4 py-2 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring">
-              <option value="">Sélectionnez un budget</option>
-              <option *ngFor="let budget of budgets" [value]="budget">{{ budget }}</option>
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0F5151] text-white">
+              <option value="" class="bg-black">Sélectionnez un budget</option>
+              <option *ngFor="let budget of budgets" [value]="budget" class="bg-black">{{ budget }}</option>
             </select>
           </div>
 
           <div class="space-y-2">
-            <label for="timeline" class="block text-sm font-medium">
+            <label for="timeline" class="block text-sm font-medium text-gray-300">
               Délai souhaité
             </label>
             <select
               id="timeline"
               name="timeline"
               [(ngModel)]="formData.timeline"
-              class="w-full px-4 py-2 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring">
-              <option value="">Sélectionnez un délai</option>
-              <option *ngFor="let timeline of timelines" [value]="timeline">{{ timeline }}</option>
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0F5151] text-white">
+              <option value="" class="bg-black">Sélectionnez un délai</option>
+              <option *ngFor="let timeline of timelines" [value]="timeline" class="bg-black">{{ timeline }}</option>
             </select>
           </div>
         </div>
 
         <div class="space-y-2">
-          <label for="message" class="block text-sm font-medium">
+          <label for="message" class="block text-sm font-medium text-gray-300">
             Message additionnel
           </label>
           <textarea
@@ -232,7 +234,7 @@
             name="message"
             [(ngModel)]="formData.message"
             rows="4"
-            class="w-full px-4 py-2 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+            class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0F5151] resize-none text-white placeholder-gray-500"
             placeholder="Décrivez votre projet et vos besoins spécifiques..."></textarea>
         </div>
       </div>
@@ -242,14 +244,13 @@
         <button
           type="submit"
           [disabled]="isSubmitting()"
-          class="w-full sm:w-auto px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
-          <!-- Replaced lucide-icon with inline SVG for Loader2 icon (spinning loader) -->
+          class="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-[#0F5151] to-[#A0C85A] text-white rounded-lg font-medium hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
           <svg *ngIf="isSubmitting()" class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
           <span>{{ isSubmitting() ? 'Envoi en cours...' : 'Envoyer la demande' }}</span>
         </button>
-        <p class="text-sm text-muted-foreground">
+        <p class="text-sm text-gray-400">
           En soumettant ce formulaire, vous acceptez d'être contacté par notre équipe.
         </p>
       </div>
@@ -257,17 +258,17 @@
 
     <!-- Additional Info -->
     <div class="mt-12 grid md:grid-cols-3 gap-6">
-      <div class="text-center space-y-2">
-        <div class="text-2xl font-bold text-primary">24h</div>
-        <p class="text-sm text-muted-foreground">Réponse garantie</p>
+      <div class="text-center space-y-2 bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6">
+        <div class="text-2xl font-bold text-[#A0C85A]">24h</div>
+        <p class="text-sm text-gray-400">Réponse garantie</p>
       </div>
-      <div class="text-center space-y-2">
-        <div class="text-2xl font-bold text-primary">Gratuit</div>
-        <p class="text-sm text-muted-foreground">Démo sans engagement</p>
+      <div class="text-center space-y-2 bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6">
+        <div class="text-2xl font-bold text-[#A0C85A]">Gratuit</div>
+        <p class="text-sm text-gray-400">Démo sans engagement</p>
       </div>
-      <div class="text-center space-y-2">
-        <div class="text-2xl font-bold text-primary">30 min</div>
-        <p class="text-sm text-muted-foreground">Durée de la démo</p>
+      <div class="text-center space-y-2 bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6">
+        <div class="text-2xl font-bold text-[#A0C85A]">30 min</div>
+        <p class="text-sm text-gray-400">Durée de la démo</p>
       </div>
     </div>
   </div>
