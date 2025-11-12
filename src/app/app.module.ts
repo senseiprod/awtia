@@ -13,6 +13,7 @@ import { DemoComponent } from './pages/demo/demo.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { HomeAltComponent } from './pages/home-alt/home-alt.component';
 import { PricingComponent } from './pages/pricing/pricing.component';
+import { DocumentationComponent } from './pages/documentation/documentation.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { PricingComponent } from './pages/pricing/pricing.component';
   providers: [],
   declarations: [
     HomeAltComponent,
-    PricingComponent
+    PricingComponent,
+    DocumentationComponent
   ]
 })
 export class AppModule { }

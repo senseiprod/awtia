@@ -1,0 +1,441 @@
+<!-- Documentation Page -->
+<div class="documentation-page">
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="sidebar-content">
+      <h3 class="sidebar-title">Documentation</h3>
+      
+      <nav class="nav-menu">
+        <a (click)="scrollToSection('introduction')" 
+           [class.active]="activeSection === 'introduction'"
+           class="nav-item">
+          Introduction
+        </a>
+        <a (click)="scrollToSection('getting-started')" 
+           [class.active]="activeSection === 'getting-started'"
+           class="nav-item">
+          Démarrage Rapide
+        </a>
+        <a (click)="scrollToSection('tts-api')" 
+           [class.active]="activeSection === 'tts-api'"
+           class="nav-item">
+          API TTS Darija
+        </a>
+        <a (click)="scrollToSection('chatbot-api')" 
+           [class.active]="activeSection === 'chatbot-api'"
+           class="nav-item">
+          API Chatbot IA
+        </a>
+        <a (click)="scrollToSection('authentication')" 
+           [class.active]="activeSection === 'authentication'"
+           class="nav-item">
+          Authentification
+        </a>
+        <a (click)="scrollToSection('code-examples')" 
+           [class.active]="activeSection === 'code-examples'"
+           class="nav-item">
+          Exemples de Code
+        </a>
+        <a (click)="scrollToSection('integration')" 
+           [class.active]="activeSection === 'integration'"
+           class="nav-item">
+          Guide d'Intégration
+        </a>
+        <a (click)="scrollToSection('faq')" 
+           [class.active]="activeSection === 'faq'"
+           class="nav-item">
+          FAQ
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Introduction Section -->
+    <section id="introduction" class="doc-section">
+      <h1 class="section-title">Documentation Sawtai</h1>
+      <p class="section-subtitle">Guide complet pour intégrer nos solutions IA vocales dans vos applications</p>
+      
+      <div class="content-card">
+        <h2>Bienvenue sur la documentation Sawtai</h2>
+        <p>Sawtai offre deux solutions principales d'intelligence artificielle vocale spécialisées en Darija (arabe marocain) :</p>
+        
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="icon-wrapper">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+              </svg>
+            </div>
+            <h3>TTS Darija</h3>
+            <p>Synthèse vocale professionnelle en Darija pour vos contenus audio</p>
+          </div>
+          
+          <div class="feature-box">
+            <div class="icon-wrapper">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+              </svg>
+            </div>
+            <h3>Chatbot IA</h3>
+            <p>Assistant vocal intelligent pour conversations automatisées</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section id="getting-started" class="doc-section">
+      <h2 class="section-title">Démarrage Rapide</h2>
+      
+      <div class="content-card">
+        <h3>1. Créer un compte</h3>
+        <p>Commencez par créer un compte sur notre plateforme pour obtenir vos clés API.</p>
+        <a routerLink="/demo" class="inline-link">Demander un accès →</a>
+      </div>
+
+      <div class="content-card">
+        <h3>2. Obtenir vos clés API</h3>
+        <p>Une fois votre compte créé, vous recevrez :</p>
+        <ul class="feature-list">
+          <li>
+            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Clé API publique</span>
+          </li>
+          <li>
+            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Clé API secrète</span>
+          </li>
+          <li>
+            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Documentation API complète</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <h3>3. Installation</h3>
+        <div class="code-block">
+          <pre><code>npm install @sawtai/sdk</code></pre>
+        </div>
+        <p class="mt-4">Ou utilisez notre API REST directement depuis n'importe quel langage.</p>
+      </div>
+    </section>
+
+    <!-- TTS API Section -->
+    <section id="tts-api" class="doc-section">
+      <h2 class="section-title">API TTS Darija</h2>
+      
+      <div class="content-card">
+        <h3>Endpoint de base</h3>
+        <div class="code-block">
+          <pre><code>POST https://api.sawtai.com/v1/tts/synthesize</code></pre>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>Paramètres</h3>
+        <div class="params-table">
+          <div class="param-row">
+            <div class="param-name">text</div>
+            <div class="param-type">string</div>
+            <div class="param-desc">Texte en Darija à synthétiser (requis)</div>
+          </div>
+          <div class="param-row">
+            <div class="param-name">voice</div>
+            <div class="param-type">string</div>
+            <div class="param-desc">ID de la voix (homme/femme)</div>
+          </div>
+          <div class="param-row">
+            <div class="param-name">speed</div>
+            <div class="param-type">number</div>
+            <div class="param-desc">Vitesse de lecture (0.5 à 2.0)</div>
+          </div>
+          <div class="param-row">
+            <div class="param-name">format</div>
+            <div class="param-type">string</div>
+            <div class="param-desc">Format audio (mp3, wav, ogg)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>Exemple de requête</h3>
+        <div class="code-block">
+          <pre><code>curl -X POST https://api.sawtai.com/v1/tts/synthesize \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{{'{'}}"text": "مرحبا بيك فالموقع ديالنا",
+      "voice": "female_01",
+      "speed": 1.0,
+      "format": "mp3"{{'}'}}' 
+  --output audio.mp3</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chatbot API Section -->
+    <section id="chatbot-api" class="doc-section">
+      <h2 class="section-title">API Chatbot IA</h2>
+      
+      <div class="content-card">
+        <h3>Endpoint de base</h3>
+        <div class="code-block">
+          <pre><code>POST https://api.sawtai.com/v1/chatbot/message</code></pre>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>Paramètres</h3>
+        <div class="params-table">
+          <div class="param-row">
+            <div class="param-name">message</div>
+            <div class="param-type">string</div>
+            <div class="param-desc">Message de l'utilisateur (requis)</div>
+          </div>
+          <div class="param-row">
+            <div class="param-name">session_id</div>
+            <div class="param-type">string</div>
+            <div class="param-desc">ID de session pour le contexte</div>
+          </div>
+          <div class="param-row">
+            <div class="param-name">language</div>
+            <div class="param-type">string</div>
+            <div class="param-desc">Langue (darija, français, arabe)</div>
+          </div>
+          <div class="param-row">
+            <div class="param-name">voice_response</div>
+            <div class="param-type">boolean</div>
+            <div class="param-desc">Retourner une réponse audio</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>Exemple de requête</h3>
+        <div class="code-block">
+          <pre><code>curl -X POST https://api.sawtai.com/v1/chatbot/message \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{{'{'}}"message": "شحال الساعة دابا؟",
+      "session_id": "user_123",
+      "language": "darija",
+      "voice_response": true{{'}}'}'</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Authentication Section -->
+    <section id="authentication" class="doc-section">
+      <h2 class="section-title">Authentification</h2>
+      
+      <div class="content-card">
+        <h3>Utilisation de la clé API</h3>
+        <p>Toutes les requêtes doivent inclure votre clé API dans l'en-tête Authorization :</p>
+        <div class="code-block">
+          <pre><code>Authorization: Bearer YOUR_API_KEY</code></pre>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>Sécurité</h3>
+        <ul class="feature-list">
+          <li>
+            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Ne partagez jamais votre clé API secrète</span>
+          </li>
+          <li>
+            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Stockez vos clés dans des variables d'environnement</span>
+          </li>
+          <li>
+            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Utilisez HTTPS pour toutes les requêtes</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Code Examples Section -->
+    <section id="code-examples" class="doc-section">
+      <h2 class="section-title">Exemples de Code</h2>
+      
+      <div class="content-card">
+        <h3>JavaScript / Node.js</h3>
+        <div class="code-block">
+          <pre><code>const Sawtai = require('@sawtai/sdk');
+
+const client = new Sawtai({{'{'}}"apiKey": process.env.SAWTAI_API_KEY{{'}'}});
+
+// TTS Example
+const audio = await client.tts.synthesize({{'{'}}"text": "مرحبا بيك",
+  "voice": "female_01"{{'}'}});
+
+// Chatbot Example
+const response = await client.chatbot.sendMessage({{'{'}}"message": "كيف نقدر نعاونك؟",
+  "sessionId": "user_123"{{'}'}});</code></pre>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>Python</h3>
+        <div class="code-block">
+          <pre><code>from sawtai import SawtaiClient
+
+client = SawtaiClient(api_key=os.environ.get('SAWTAI_API_KEY'))
+
+# TTS Example
+audio = client.tts.synthesize(
+    text="مرحبا بيك",
+    voice="female_01"
+)
+
+# Chatbot Example
+response = client.chatbot.send_message(
+    message="كيف نقدر نعاونك؟",
+    session_id="user_123"
+)</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section id="integration" class="doc-section">
+      <h2 class="section-title">Guide d'Intégration</h2>
+      
+      <div class="content-card">
+        <h3>Intégration Web</h3>
+        <p>Ajoutez facilement nos services à votre site web :</p>
+        <div class="code-block">
+          <pre><code>&lt;script src="https://cdn.sawtai.com/sdk.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  Sawtai.init({{'{'}}"apiKey": "YOUR_PUBLIC_KEY"{{'}'}});
+  
+  // Utiliser le TTS
+  Sawtai.speak("مرحبا بيك");
+&lt;/script&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>Intégration Mobile</h3>
+        <p>SDKs disponibles pour iOS et Android</p>
+        <div class="code-block">
+          <pre><code>// iOS (Swift)
+import SawtaiSDK
+
+let client = SawtaiClient(apiKey: "YOUR_API_KEY")
+client.tts.speak(text: "مرحبا بيك")
+
+// Android (Kotlin)
+import com.sawtai.sdk.SawtaiClient
+
+val client = SawtaiClient("YOUR_API_KEY")
+client.tts.speak("مرحبا بيك")</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="doc-section">
+      <h2 class="section-title">Questions Fréquentes</h2>
+      
+      <div class="content-card">
+        <h3>Quelles langues sont supportées ?</h3>
+        <p>Nous supportons principalement le Darija (arabe marocain), mais aussi le français et l'arabe standard. Plus de 50 langues sont disponibles pour le chatbot.</p>
+      </div>
+
+      <div class="content-card">
+        <h3>Quelles sont les limites d'utilisation ?</h3>
+        <p>Les limites dépendent de votre plan :</p>
+        <ul class="feature-list">
+          <li>
+            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Starter : 10 000 requêtes/mois</span>
+          </li>
+          <li>
+            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Professional : 100 000 requêtes/mois</span>
+          </li>
+          <li>
+            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Enterprise : Illimité</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <h3>Comment gérer les erreurs ?</h3>
+        <p>Notre API retourne des codes HTTP standards :</p>
+        <div class="code-block">
+          <pre><code>200 - Succès
+400 - Requête invalide
+401 - Clé API invalide
+429 - Limite de requêtes atteinte
+500 - Erreur serveur</code></pre>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>Support technique</h3>
+        <p>Notre équipe est disponible pour vous aider :</p>
+        <ul class="feature-list">
+          <li>
+            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Email : support@sawtai.com</span>
+          </li>
+          <li>
+            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Chat en direct sur notre site</span>
+          </li>
+          <li>
+            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Documentation détaillée en ligne</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-card">
+        <h2>Prêt à commencer ?</h2>
+        <p>Demandez un accès à notre API et commencez à intégrer Sawtai dans vos applications dès aujourd'hui.</p>
+        <div class="cta-buttons">
+          <a routerLink="/demo" class="btn-primary">
+            Demander un accès
+            <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </a>
+          <a routerLink="/pricing" class="btn-secondary">Voir les tarifs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
